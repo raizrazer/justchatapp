@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" type="text/css" href="/client/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="sign-in" style="display: block;">
+            <div id="main-heading">
+                <h3>Login</h3>
+            </div>
+            <form action="" id="sign-in-form">
+                <input type="text" id="username">
+                <br>
+                <button id="submit-button" type="submit" class="btn btn-primary">Login</button></sub>
+            </form>
+        </div>
+        <div id="chat-box" style="display: none;">
+            <div class="main-heading">
+                <h3>Chatting</h3>
+            </div>
+            <div id="chat-messages">
+            </div>
+            <form action="" id="chat-entered">
+                <input type="text" id="message-input">
+                <button id="send-button" type="submit">Send</button></sub>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Socket Initiazillitation
+        var socket = io();
+
+        // Sign-In Form Necessasity
+        var signinForm = document.getElementById('sign-in');
+        var userName = document.getElementById('username');
+        var loginSubmit = document.getElementById('submit-button');
+
+        // ChatBox Form Necessasity
+        var chatBox = document.getElementById('chat-box');
+        var chatMessages = document.getElementById('chat-messages');
+        var messageInput = document.getElementById('message-input')
+        var chatEntered = document.getElementById('chat-entered');
+        // Enter UserName Form Prompt
+        socket.on('enter-username', function() {
+            signinForm.style.display = 'block';
+            // Then when the client enters the username and press submit, emit a signal from the client that the login details have been entered.
+            signinForm.onsubmit = function(e) {
+                e.preventDefault();
+                socket.emit('usernameEntered', userName.value);
+                userName.value = '';
+            }
+        });
+
+        socket.on('login-completed', function(data) {
+            signinForm.style.display = 'none';
+            chatBox.style.display = 'block';
+            chatMessages.innerHTML = "<div id=\"message\"> Welcome, " + data + "! </div>";
+        });
+
+        chatEntered.onsubmit = function(e) {
+            e.preventDefault();
+            if (messageInput.value === '') {
+                alert("Enter a message")
+            } else {
+                socket.emit('message-entered', messageInput.value);
+                messageInput.value = '';
+            }
+        }
+
+        socket.on('add-ToChat', function(data) {
+            chatMessages.innerHTML += "<div>" + data + " </div>";
+        });
+    </script>
+</body>
+
+</html>

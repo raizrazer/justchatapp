@@ -1,0 +1,71 @@
+body {
+    background: grey !important;
+    height: fit-content;
+}
+
+#sign-in {
+    width: 384px;
+    height: 208px;
+    margin: 8% auto;
+    overflow: hidden;
+    text-align: center !important;
+    background: #e7e7e7;
+    border-radius: 5px;
+    border: 4px solid limegreen;
+}
+
+#main-heading {
+    padding: 5px 0px 0px 0px;
+    margin: 0px !important;
+}
+
+
+/* 
+#sign-in-form {} */
+
+#username {
+    padding: 7px;
+    margin: 26px;
+    border: 2px solid limegreen;
+    background: black;
+    border-radius: 4px;
+    color: limegreen;
+}
+
+#submit-button {
+    font-size: 19px;
+    padding: 7px;
+    margin: 0px;
+    border: 2px solid limegreen;
+    background: black;
+    border-radius: 4px;
+    color: limegreen;
+}
+
+#message-input {
+    font-size: 18px;
+    padding: 7px;
+    width: 100%;
+    height: 50px;
+    border: 2px solid limegreen;
+    background: black;
+    border-radius: 4px;
+    color: limegreen;
+}
+
+#chat-messages {
+    overflow: scroll;
+    height: 78%;
+    width: 100%;
+    background: lightblue;
+    padding: 6px 12px 6px 12px;
+}
+
+#send-button {
+    font-size: 18px;
+    height: 50px;
+    border: 2px solid limegreen;
+    background: black;
+    border-radius: 4px;
+    color: limegreen;
+}

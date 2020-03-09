@@ -12,17 +12,22 @@
 </head>
 
 <body>
-    <div class="container">
-        <div id="sign-in" style="display: block;">
-            <div id="main-heading">
-                <h3>Login</h3>
+    <div class="wrapper">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-6 col-md-5 col-lg-4 col-xl-3 layer1" id="sign-in" style="display: block;">
+                <div id="main-heading">
+                    <h3>Enter a username</h3>
+                    <p>(It doesn't need to be a related one)</p>
+                </div>
+                <form action="" id="sign-in-form">
+                    <input type="text" autocomplete="off" id="username">
+                    <label class="place-holder">Name</label>
+                    <br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Go In</button></sub>
+                </form>
             </div>
-            <form action="" id="sign-in-form">
-                <input type="text" id="username">
-                <br>
-                <button id="submit-button" type="submit" class="btn btn-primary">Login</button></sub>
-            </form>
         </div>
+
         <div id="chat-box" style="display: none;">
             <div class="main-heading">
                 <h3>Chatting</h3>

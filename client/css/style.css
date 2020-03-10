@@ -3,7 +3,9 @@
     margin: 0px;
 }
 
-body {}
+body {
+    background: transparent;
+}
 
 .wrapper {
     position: fixed;
@@ -50,27 +52,34 @@ input#username {
     border-bottom: 2px solid #00A88C;
 }
 
-label.place-holder {
+#sign-in-form span {
     position: absolute;
-    left: 46px;
-    color: grey;
-    font-size: 16px;
-    font-weight: 500;
-    transform: translate(0px, 10px);
-    transition: all 0.15s ease-in;
+    left: 11%;
+    bottom: 54%;
+    transition: all 0.25s ease-in;
+    transform: translate(0px, 0px);
 }
 
-#sign-in-form input:focus+label.place-holder {
-    transform: translate(-6px, -25px);
-    font-weight: 200;
-    font-size: 18px;
+label.place-holder {
+    display: block;
 }
 
-#sign-in-form input:valid+label.place-holder {
-    transform: translate(-6px, -25px);
-    font-weight: 200;
-    font-size: 18px;
+form#sign-in-form input#username:focus+label.place-holder span,
+form#sign-in-form input#username:valid+label.place-holder span {
+    transform: translate(-25%, -180%);
+    font-size: 14px;
+    font-weight: 300;
 }
+
+
+/* 
+,
+form#sign-in-form input#username:valid+label.place-holder span */
+
+
+/* input#username:focus+#sign-in-form span {
+    transform: translate(6px, -9px);
+} */
 
 
 /* #sign-in-form input#username:valid+label.place-holder {

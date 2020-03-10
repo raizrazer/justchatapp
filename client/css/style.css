@@ -7,7 +7,43 @@ body {
     background: transparent;
 }
 
-.wrapper {
+
+/* SCROLL BAR DESIGN STARTS HERE */
+
+
+/* 
+.scrollbar {
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 65px;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+} */
+
+#style-6::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+#style-6::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-6::-webkit-scrollbar-thumb {
+    background-color: #F90;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+}
+
+
+/* SCROLL BAR DESIGN ENDS HERE */
+
+
+/* SIGN IN USER INTERFACE DESIGN */
+
+.wrapper1 {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -70,6 +106,68 @@ form#sign-in-form input#username:valid+label.place-holder span {
     font-size: 14px;
     font-weight: 300;
 }
+
+
+/* SIGN IN USER INTERFACE ENDS HERE */
+
+
+/* CHAT INTERFACE USER INTERFACE BEGINS HERE */
+
+.wrapper1 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #051937;
+}
+
+.layer2 {
+    position: absolute !important;
+    background: antiquewhite !important;
+    height: 100% !important;
+    /* top: 25% !important; */
+}
+
+textarea#message-input {
+    height: 6%;
+    width: 85%;
+    position: absolute;
+    bottom: 2%;
+    padding: 0px 0px 0px 10px;
+    color: #3c3939;
+}
+
+button#send-button {
+    position: absolute;
+    bottom: 1.7%;
+    right: 4.8%;
+    width: 10.4%;
+    height: 6.8%;
+    border-radius: 0px;
+    border: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+    textarea#message-input {
+        height: 6%;
+        width: 82%;
+        position: absolute;
+        bottom: 2%;
+        padding: 0px 0px 0px 10px;
+        color: #3c3939;
+    }
+    button#send-button {
+        position: absolute;
+        bottom: 1.7%;
+        right: 0.8%;
+        width: 17.4%;
+        height: 6.8%;
+        border-radius: 0px;
+        border: 0px;
+    }
+}
+
+
+/* CHAT INTERFACE USER INTERFACE ENDS HERE */
 
 
 /* 

@@ -127,9 +127,9 @@ form#sign-in-form input#username:valid+label.place-holder span {
     /* top: 25% !important; */
 }
 
-textarea#message-input {
+input#message-input {
     height: 6%;
-    width: 85%;
+    width: 94%;
     position: absolute;
     bottom: 2%;
     padding: 0px 0px 0px 10px;
@@ -146,15 +146,19 @@ button#send-button {
     border: 0px;
 }
 
+div#username-bold {
+    display: inline-block;
+    font-weight: 700;
+    /* float: none; */
+}
+
+#chat-messages div {
+    background: darksalmon;
+    margin: 8px 0px;
+    padding: 2px;
+}
+
 @media screen and (max-width: 1200px) {
-    textarea#message-input {
-        height: 6%;
-        width: 82%;
-        position: absolute;
-        bottom: 2%;
-        padding: 0px 0px 0px 10px;
-        color: #3c3939;
-    }
     button#send-button {
         position: absolute;
         bottom: 1.7%;

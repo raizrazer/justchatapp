@@ -29,7 +29,7 @@ io.sockets.on('connection', function(socket) {
     socket.on('message-entered', function(data) {
         socket.message = data;
         for (var i in SOCKET_LIST) {
-            SOCKET_LIST[i].emit('add-ToChat', socket.name + ": " + socket.message);
+            SOCKET_LIST[i].emit('add-ToChat', "<div id='username-bold'>" + socket.name + " : </div>" + socket.message);
         }
     });
 

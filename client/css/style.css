@@ -1,71 +1,207 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
 body {
-    background: grey !important;
-    height: fit-content;
+    background: transparent;
 }
 
-#sign-in {
-    width: 384px;
-    height: 208px;
-    margin: 8% auto;
-    overflow: hidden;
-    text-align: center !important;
-    background: #e7e7e7;
-    border-radius: 5px;
-    border: 4px solid limegreen;
-}
 
-#main-heading {
-    padding: 5px 0px 0px 0px;
-    margin: 0px !important;
-}
+/* SCROLL BAR DESIGN STARTS HERE */
 
 
 /* 
-#sign-in-form {} */
+.scrollbar {
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 65px;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+} */
 
-#username {
-    padding: 7px;
-    margin: 26px;
-    border: 2px solid limegreen;
-    background: black;
-    border-radius: 4px;
-    color: limegreen;
+#style-6::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
 }
 
-#submit-button {
-    font-size: 19px;
-    padding: 7px;
-    margin: 0px;
-    border: 2px solid limegreen;
-    background: black;
-    border-radius: 4px;
-    color: limegreen;
+#style-6::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
 }
 
-#message-input {
-    font-size: 18px;
-    padding: 7px;
+#style-6::-webkit-scrollbar-thumb {
+    background-color: #F90;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+}
+
+
+/* SCROLL BAR DESIGN ENDS HERE */
+
+
+/* SIGN IN USER INTERFACE DESIGN */
+
+.wrapper1 {
+    position: fixed;
     width: 100%;
-    height: 50px;
-    border: 2px solid limegreen;
-    background: black;
-    border-radius: 4px;
-    color: limegreen;
+    height: 100%;
+    background: #051937;
 }
 
-#chat-messages {
+.layer1 {
+    position: absolute !important;
+    background: antiquewhite !important;
+    height: 373px!important;
+}
+
+#main-heading {
+    padding: 42px 0px 42px 0px;
+}
+
+.main-heading {
+    height: 74px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#main-heading p {
+    line-height: 0px;
+    font-size: 11px;
+    font-style: italic;
+}
+
+form#sign-in-form {
+    text-align: center;
+}
+
+button#submit-button {
+    width: 35%;
+    height: 43px;
+    border-radius: 0px;
+    border: 0px;
+    margin: 30px 0px;
+}
+
+input#username {
+    padding: 2px 0px 0px 10px;
+    height: 38px;
+    width: 88%;
+    border: none;
+    color: #36373e;
+    border-bottom: 2px solid #00A88C;
+}
+
+#sign-in-form span {
+    position: absolute;
+    left: 11%;
+    bottom: 54%;
+    transition: all 0.25s ease-in;
+    transform: translate(0px, 0px);
+}
+
+label.place-holder {
+    display: block;
+}
+
+form#sign-in-form input#username:focus+label.place-holder span,
+form#sign-in-form input#username:valid+label.place-holder span {
+    transform: translate(-25%, -180%);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/* SIGN IN USER INTERFACE ENDS HERE */
+
+
+/* CHAT INTERFACE USER INTERFACE BEGINS HERE */
+
+.wrapper1 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #051937;
+}
+
+.layer2 {
+    position: absolute !important;
+    background: antiquewhite !important;
+    height: 100% !important;
+    /* top: 25% !important; */
+}
+
+input#message-input {
+    height: 42px;
+    width: 94%;
+    position: absolute;
+    bottom: 2%;
+    padding: 0px 0px 0px 10px;
+    color: #3c3939;
+}
+
+button#send-button {
+    position: absolute;
+    bottom: 1.7%;
+    right: 4.8%;
+    width: 10.4%;
+    height: 46px;
+    border-radius: 0px;
+    border: 0px;
+}
+
+div#username-bold {
+    display: contents;
+    font-weight: 700;
+    /* float: none; */
+}
+
+#chat-messages div {
+    background: darksalmon;
+    margin: 8px 0px;
+    line-height: 30px;
+    word-wrap: break-word;
+    padding: 0px 14px 0px 14px;
+}
+
+div#chat-messages {
+    scroll-behavior: smooth;
+    height: 82%;
     overflow: scroll;
-    height: 78%;
-    width: 100%;
-    background: lightblue;
-    padding: 6px 12px 6px 12px;
+    overflow-x: hidden;
 }
 
-#send-button {
-    font-size: 18px;
-    height: 50px;
-    border: 2px solid limegreen;
-    background: black;
-    border-radius: 4px;
-    color: limegreen;
+@media screen and (max-width: 1200px) {
+    button#send-button {
+        position: absolute;
+        bottom: 1.7%;
+        right: 0.8%;
+        width: 17.4%;
+        height: 45.5px;
+        border-radius: 0px;
+        border: 0px;
+    }
 }
+
+
+/* CHAT INTERFACE USER INTERFACE ENDS HERE */
+
+
+/* 
+,
+form#sign-in-form input#username:valid+label.place-holder span */
+
+
+/* input#username:focus+#sign-in-form span {
+    transform: translate(6px, -9px);
+} */
+
+
+/* #sign-in-form input#username:valid+label.place-holder {
+    transform: translate(-6px, -25px);
+    font-weight: 200;
+    font-size: 18px;
+} */

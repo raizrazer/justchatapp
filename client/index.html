@@ -88,6 +88,10 @@
 
         socket.on('add-ToChat', function(data) {
             chatMessages.innerHTML += "<div>" + data + " </div>";
+
+
+            // SCROLL FUNCTION WHENEVER THE CHAT IS TOO LONG.
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         });
     </script>
 </body>
